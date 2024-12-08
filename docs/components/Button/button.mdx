@@ -1,0 +1,127 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Button
+
+A button is a component that users can click or tap to initiate an action.
+
+<Tabs>
+  <TabItem value="contained" label="Contained" default>
+    <img
+      src="https://github.com/user-attachments/assets/03401d66-03a8-416a-a3e8-8562615fff29"
+      alt="Apple Image"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="outlined" label="Outlined">
+    <img
+      src="https://github.com/user-attachments/assets/6a25f6f2-5512-45ce-9e7f-cbcccf07a796"
+      alt="Apple Image"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="text" label="Text">
+    <img
+      src=" https://github.com/user-attachments/assets/f6b5107a-bffd-40bf-8f1d-dcef0e54d585"
+      alt="Apple Image"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```tsx
+import {Button} from "@/components";
+import React from "react";
+
+const HomeScreen = () => {
+  return (
+    <Button>
+      <Button.Text title="Default" />
+    </Button>
+  );
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+### variant
+
+Type: `'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'white' | 'black'`
+
+The varinat determines its color, allowing you to align its appearance with its priority or context:
+
+```tsx
+<Button variant="black">
+  <Button.Text title="Black Button" />
+</Button>
+```
+
+### size
+
+Type: `'sm' | 'md' | 'lg'`
+
+The `size` prop controls the size of the button, making it suitable for different layouts and contexts.
+
+- `sm`: Small-sized button.
+- `md`: Medium-sized button (default).
+- `lg`: Large-sized button.
+
+```tsx
+<Button size="sm">
+  <Button.Text title="Small Button" />
+</Button>
+```
+
+### type
+
+Type: `'contained' | 'outlined' | 'text'`
+
+The `type` prop defines the button's visual style:
+
+- `contained`: A filled button with a background color.
+- `outlined`: A button with an outline and no background color.
+- `text`: A flat button with no background or border, useful for minimalistic designs.
+
+```tsx
+<Button type="outlined">
+  <Button.Text title="Outlined Button" />
+</Button>
+```
+
+### disabled
+
+Type: `boolean`
+
+The `disabled` prop determines whether the button is interactive or not. A disabled button cannot be pressed by onpress.
+
+```tsx
+<Button variant="secondary" disabled type="text">
+  <Button.Text title="Disabled" />
+</Button>
+```
+
+### loading
+
+Type: `boolean`
+
+The `loading` prop displays a loading indicator inside the button, indicating an ongoing action.
+
+```tsx
+<Button loading>
+  <Button.Text title="Disabled" />
+</Button>
+```
+
+### onPress
+
+Type: `(e: GestureResponderEvent) => void`
+
+Function to execute on press.
+
+### children (required)
+
+Type: `React.ReactNode`
