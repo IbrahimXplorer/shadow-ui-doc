@@ -1,0 +1,30 @@
+# Button.Icon
+
+A component to show an icon inside a button as a child.
+
+<img
+  src="https://github.com/user-attachments/assets/52b28480-b604-4322-af84-14621dd3e444"
+  alt="Button"
+  style={{maxWidth: "30%", height: "auto"}}
+/>
+
+## Usage
+
+```tsx
+import {Button} from "@/components";
+import React from "react";
+
+const HomeScreen = () => {
+  return (
+    <Button>
+      <Button.Icon icon="home" color="white" />
+    </Button>
+  );
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+Button extends all the props of [Icon](/guides/content/editing-an-existing-page#modifying-front-matter) component
