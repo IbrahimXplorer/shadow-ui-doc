@@ -1,0 +1,120 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Icon
+
+An icon is a small graphic symbol or image used to represent an idea, action, or object, often in digital interfaces or designs. It simplifies communication by visually conveying meaning without using text.
+
+<Tabs>
+  <TabItem value="vector" label="Vector Icon" default>
+    <img
+      src="https://github.com/user-attachments/assets/9208f64b-14e4-4f17-af18-0f933cf71e7b"
+      alt="Vector icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="svg" label="SVG Icon">
+    <img
+      src="https://github.com/user-attachments/assets/03a36085-1070-4ff0-9b95-afa84b5287ee"
+      alt="SVG icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="image" label="Image Icon">
+    <img
+      src="https://github.com/user-attachments/assets/1d4f5c46-593c-4345-ba57-56b65a2c2123"
+      alt="Image icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="animation" label="Animated Icon">
+    <video controls autoplay width="30%" muted>
+      <source src="https://github.com/user-attachments/assets/27d9e868-6b33-46bf-a3d8-fb0e5ef349b7" />
+    </video>
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```tsx
+import {Icon} from "@/components";
+import React from "react";
+
+export const HomeScreen = () => {
+  return <Icon icon="home" variant="svg" color="primary" size={10} />;
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+### `variant`
+
+**Type:** `'vector' | 'svg' | 'image' | 'animation'`
+
+Determines the type of icon to be rendered.
+
+- **`vector`**: Accepts all [React Native Vector Icons](https://oblador.github.io/react-native-vector-icons/).
+- **`svg`**: Accepts SVG icons.
+- **`image`**: Accepts image icons.
+- **`animation`**: Accepts Lottie animations supported by [React Native Lottie](https://airbnb.io/lottie/#/react-native).
+
+```tsx
+<Icon icon="home" variant="svg" />
+```
+
+### `size`
+
+**Type:** `number`
+
+Specifies the size of the icon. The size corresponds to values defined in the theme's spacing object.
+
+```tsx
+<Icon icon="home" variant="svg" size={8} />
+```
+
+### `color`
+
+**Type:** `string`
+
+Specifies the color of the icon. The color should match a name defined in the theme's color object.
+
+```tsx
+<Icon icon="home" variant="vector" color="success" />
+```
+
+### `icon`
+
+**Type:** `string`
+
+Specifies the name of the icon to display. The name should correspond to a valid icon from the constants, images, animations, or [Vector Icons](https://oblador.github.io/react-native-vector-icons/).
+
+```tsx
+<Icon icon="home" variant="vector" color="home" />
+```
+
+### `type`
+
+**Type:** `string`
+
+Used when the `variant` is set to `vector`. Specifies the type of vector icon. Accepts the following keys:
+
+- `ant`: AntDesign
+- `entypo`: Entypo
+- `evil`: EvilIcons
+- `fa`: FA
+- `fa5`: FA5
+- `feather`: Feather
+- `fontisto`: Fontisto
+- `foundation`: Foundation
+- `ionicon`: Ionicons
+- `material`: MaterialIcons
+- `materialCommunity`: MaterialCommunityIcons
+- `octicon`: Octicons
+- `simpleLine`: SimpleLineIcons
+- `zocial`: Zocial
+
+```tsx
+<Icon icon="home" variant="vector" type="ant" color="home" />
+```
