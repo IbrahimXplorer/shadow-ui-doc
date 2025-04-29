@@ -1,0 +1,68 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Text
+
+Elevate your app’s UI with the Shadow UI Text component — a flexible React Native text component offering a wide range of variants, colors, and formatting options for smooth and consistent design.
+
+
+    <img
+      src="https://github-production-user-asset-6210df.s3.amazonaws.com/149879117/438555567-4b740209-d69a-4955-a223-9117f6258300.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250429T043806Z&X-Amz-Expires=300&X-Amz-Signature=7afb13b74f1da2b73a2aa0c24d71a99679b34bfa2f063c352e77f72841003c8f&X-Amz-SignedHeaders=host"
+      alt="Vector icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+
+
+## Usage
+
+```tsx
+import {Text} from "@/components";
+import React from "react";
+
+export const Example = () => {
+  return <Text color="primary" variant="heading1"/>;
+};
+
+export default Example;
+```
+
+## Props
+
+### `Text Props`
+
+Extends the [`Text Props`](https://reactnative.dev/docs/text#props) from React Native.
+
+### `Variant`
+
+**Type:** `number`
+
+Variant specifies the appropriate text style based on the type's role and size. Available variants include:
+
+Heading: `heading1`, `heading2` , `heading3`
+
+B1: `b1bold`, `b1semiBold` , `b1medium`, `b1regular`
+
+B2: `b2bold`, `b2semiBold` , `b2medium`, `b2regular`
+
+B3: `b3bold`, `b3semiBold` , `b3medium`, `b3regular`
+
+B4: `b4bold`, `b4semiBold` , `b4medium`, `b4regular`
+
+B5: `b5bold`, `b5semiBold` , `b5medium`, `b5regular`
+
+Base: `base`
+
+### `color`
+
+**Type:** `string`
+
+Specifies the color of the text. The color should match a name defined in the [`theme's color`](https://github.com/IbrahimXplorer/shadow-ui/blob/main/src/theme/colors.ts) object.
+
+### `children (required)`
+
+**Type:** `React.ReactNode`
+
+### `Style`
+
+**Type:** [`StyleProp<TextStyle>`](https://reactnative.dev/docs/text-style-props)
+
