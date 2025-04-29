@@ -1,0 +1,82 @@
+import Link from '@docusaurus/Link';
+
+#List Item
+
+A component to show card inside a List.
+
+    <img
+      src="https://github-production-user-asset-6210df.s3.amazonaws.com/149879117/438601646-06fa76c7-6d42-42af-b618-722876332605.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250429T062539Z&X-Amz-Expires=300&X-Amz-Signature=2969254a6ed7145270393a4bffb17316dc30aefed8782ae0b896b9ac4ee0573f&X-Amz-SignedHeaders=host"
+
+alt="Apple Image"
+style={{maxWidth: "50%", height: "auto"}}
+/>
+
+## Usage
+
+```tsx
+import React from 'react';
+
+import {List} from './components';
+
+const Example = () => {
+  return (
+    <List>
+      <List.Item
+        title="list item1"
+        description="list item description here"
+        left={() => <List.Icon icon="heart" />}
+        right={() => <List.Icon icon="alert-circle" />}
+      />
+      <List.Item
+        title="list item2"
+        description="list item description here"
+        left={() => <List.Icon icon="heart" />}
+        right={() => <List.Icon icon="alert-circle" />}
+      />
+    </List>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+### title(required)
+
+Type: `'string'`
+
+Title text for the list accordion.
+
+### description
+
+Type: `'string'`
+
+description text for the list accordion.
+
+### left
+
+Type: `'() => React.ReactNode'`
+
+### right
+
+Type: `'() => React.ReactNode'`
+
+### titleVariant
+
+Type: `'string'`
+
+varinat props from the base text component. <Link to="/docs/components/text">Check all varaints</Link> .
+
+### titleColor
+
+Type: `'string'`
+
+color props from the base text component. The color should match a name defined in the [`theme's color`](https://github.com/IbrahimXplorer/shadow-ui/blob/main/src/theme/colors.ts) object.
+
+### divider
+
+Type: `boolean`
+
+A horizontal separator at the bottom of the list
+

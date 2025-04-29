@@ -1,0 +1,32 @@
+import Link from "@docusaurus/Link";
+
+#List Icon
+
+A component that displays an icon within a list item.
+
+    <img
+      src="https://github-production-user-asset-6210df.s3.amazonaws.com/149879117/438610713-c6f2b540-1ef2-40d5-8f9d-5faec731d5d7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250429T065339Z&X-Amz-Expires=300&X-Amz-Signature=234f537bb9d359f2a7a577d57070e3ff3ab046ee5d9b875b33488592466f6bc2&X-Amz-SignedHeaders=host"
+
+alt="Apple Image"
+style={{maxWidth: "50%", height: "auto"}}
+/>
+
+## Usage
+
+```tsx
+import React from 'react';
+
+import {List} from './components';
+
+const Example = () => {
+  return (
+      <List.Icon icon="heart" />
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends [`IconProps`](/docs/components/icon) from Icon component
