@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
         "components/Text",
         "components/Box",
         "components/Icon",
+         "components/Badge",
         {
           type: "category",
           label: "Button",
@@ -58,6 +59,7 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
+   
   ],
 };
 
