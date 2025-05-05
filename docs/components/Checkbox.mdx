@@ -1,5 +1,3 @@
-
-
 Checkboxes allow users to select multiple items from a predefined set. This component conforms to Android design standards but is fully supported on all platforms
 
     <img
@@ -7,14 +5,12 @@ Checkboxes allow users to select multiple items from a predefined set. This comp
       alt="Vector icon"
       style={{maxWidth: "30%", height: "auto"}}
     />
- 
-
 
 ## Usage
 
 ```tsx
-import React, {useState} from 'react';
-import {Checkbox, CheckboxStatus} from './components';
+import React, { useState } from "react";
+import { Checkbox, CheckboxStatus } from "./components";
 
 const Example = () => {
   const [checked, setChecked] = useState(false);
@@ -46,7 +42,6 @@ Type : `boolean`
 Type: `(e: GestureResponderEvent) => void`
 
 Function to execute on press.
-
 
 ### `uncheckedColor`
 

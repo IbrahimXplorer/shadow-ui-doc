@@ -32,6 +32,7 @@ const sidebars: SidebarsConfig = {
         "components/Icon",
          "components/Badge",
          "components/Checkbox",
+         "components/Switch",
         {
           type: "category",
           label: "Button",
