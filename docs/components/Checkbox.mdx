@@ -1,0 +1,57 @@
+
+
+Checkboxes allow users to select multiple items from a predefined set. This component conforms to Android design standards but is fully supported on all platforms
+
+    <img
+      src="https://github.com/user-attachments/assets/ce1dce40-43d2-4e6e-8fa4-65dd11389008"
+      alt="Vector icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+ 
+
+
+## Usage
+
+```tsx
+import React, {useState} from 'react';
+import {Checkbox, CheckboxStatus} from './components';
+
+const Example = () => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <Checkbox
+      status={checked ? CheckboxStatus.Checked : CheckboxStatus.Unchecked}
+      onPress={() => {
+        setChecked(!checked);
+      }}
+    />
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+### `status`
+
+Type : `'checked' | 'unchecked' | 'indeterminate'`
+
+### `disabled`
+
+Type : `boolean`
+
+### onPress
+
+Type: `(e: GestureResponderEvent) => void`
+
+Function to execute on press.
+
+
+### `uncheckedColor`
+
+Type : `string`
+
+### `color`
+
+Type : `string`
