@@ -34,6 +34,7 @@ const sidebars: SidebarsConfig = {
          "components/Checkbox",
          "components/Switch",
          "components/Clickable",
+         "components/Input",
         {
           type: "category",
           label: "Button",
