@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
          "components/Switch",
          "components/Clickable",
          "components/Input",
+         "components/IconButton",
         {
           type: "category",
           label: "Button",
