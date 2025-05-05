@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     "Getting-Started",
     "Theming",
+    "Restyle-functions",
     "Colors",
     {
       type: "category",
