@@ -1,0 +1,102 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+The Screen component is a foundational layout utility used to define and render a full-screen view in a React Native app. It abstracts away complexities such as safe area insets, keyboard avoidance, and scrolling behavior using a flexible preset system.
+
+<Tabs>
+  <TabItem value="image" label="Fixed Screen">
+    <img
+      src="https://github.com/user-attachments/assets/63b626c1-da37-4b64-ae86-47aea76b3598"
+      alt="Image icon"
+      style={{maxWidth: "30%", height: "auto"}}
+    />
+  </TabItem>
+  <TabItem value="animation" label="Scrollable Screen">
+    <video controls autoplay width="30%" muted>
+      <source src="https://github.com/user-attachments/assets/9760c348-0301-4ea2-9a37-cf5dd7ddd8d2" />
+    </video>
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```tsx
+import { Screen, Text } from '@/components';
+import React from 'react';
+
+const HomeScreen = () => {
+  return (
+    <Screen preset="auto" safeAreaEdges={['top']}>
+      <Text>
+        This is home screen
+      </Text>
+    </Screen>
+  );
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+**Type:** `'auto' | 'scroll' | 'fixed'`
+
+- **Auto:** The screen will scroll only if the content exceeds the screen height.
+
+- **scroll:** The screen always scrolls, regardless of content height.
+
+- **fixed:** The screen content remains fixed and does not scroll.
+
+## background
+
+**Type:** `BackgroundColorProps<Theme['backgroundColor']`
+
+Sets the background color of the screen using a Restyle token.
+
+## safeAreaEdges
+
+**Type:** `['top'], ['bottom'], ['left', 'right']`
+
+Edges on which to apply safe area padding (e.g., ['top'], ['bottom'], ['top', 'bottom']).
+
+## style
+
+**Type:** `StyleProp<ViewStyle>`
+
+## contentContainerStyle
+
+**Type:** `StyleProp<ViewStyle>`
+
+Style applied to the outer container.
+
+## keyboardShouldPersistTaps
+
+**Type:** `'handled' | 'always' | 'never'`
+
+- Only applicable with scroll or auto presets.
+
+- Controls whether tapping on the screen dismisses the keyboard.
+
+
+## ScrollViewProps
+
+**Type:** `'ScrollViewProps`
+
+- Only applicable with scroll or auto presets.
+
+- Passes additional props to the internal ScrollView.
+
+## scrollEnabledToggleThreshold (auto preset only)
+
+**Type:** `{ percent?: number; point?: number }`
+
+- Controls the threshold to determine when scrolling is enabled in auto mode:
+
+- percent: Enable scroll if content exceeds this percentage of the view height (default: 0.92)
+
+- point: Pixel-based fallback threshold
+
+# Notes
+- If you pass ScrollViewProps, they are spread onto the internal ScrollView, so you can control behavior like refreshControl, bounces, etc.
+
+- In auto mode, content is measured on each render to determine whether scroll should be enabled. This behavior ensures a seamless user experience regardless of dynamic content length.
