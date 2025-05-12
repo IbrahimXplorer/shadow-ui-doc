@@ -30,13 +30,23 @@ const sidebars: SidebarsConfig = {
         "components/Text",
         "components/Box",
         "components/Icon",
-         "components/Badge",
-         "components/Checkbox",
-         "components/Switch",
-         "components/Clickable",
-         "components/Input",
-         "components/IconButton",
-         "components/Screen",
+        "components/Badge",
+        "components/Checkbox",
+        "components/Switch",
+        "components/Clickable",
+        "components/Input",
+        "components/IconButton",
+        "components/Screen",
+        {
+          type: "category",
+          label: "Header",
+          items: [
+            "components/Header/Header",
+            "components/Header/Header.BackAction",
+            "components/Header/Header.Content",
+            "components/Header/Header.Action"
+          ],
+        },
         {
           type: "category",
           label: "Button",
@@ -65,7 +75,6 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-   
   ],
 };
 

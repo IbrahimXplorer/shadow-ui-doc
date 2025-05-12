@@ -1,0 +1,73 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+The `Header` component provides a consistent top bar UI for screens in your React Native app. It supports back navigation, screen titles with optional subtitles, and action buttons (e.g., notifications or settings icons).
+
+<Tabs>
+  <TabItem value="vector" label="with back action" default>
+    <img
+      src="https://github.com/user-attachments/assets/62e7c287-0bb7-42ae-a382-31178305faf6"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto" }}
+    />
+  </TabItem>
+  <TabItem value="svg" label="with subtitle">
+    <img
+      src="https://github.com/user-attachments/assets/7ac1a1f1-7a33-448b-a610-e355ee113543"
+      alt="SVG icon"
+      style={{ maxWidth: "30%", height: "auto" }}
+    />
+  </TabItem>
+  <TabItem value="image" label="with right icon">
+    <img
+      src="https://github.com/user-attachments/assets/823189bd-246e-4746-ba37-9544ce57bb92"
+      alt="Image icon"
+      style={{ maxWidth: "30%", height: "auto" }}
+    />
+  </TabItem>
+</Tabs>
+
+## Usage
+```tsx
+import {Header, Screen, Text} from '@/components';
+import useHeader from '@/hooks/useHeader';
+import React from 'react';
+
+const HomeScreen = () => {
+  useHeader(() => (
+    <Header>
+      <Header.BackAction />
+      <Header.Content title="hellow" subTitle="John Doe" />
+      <Header.Action variant="vector" icon="bell" />
+    </Header>
+  ));
+
+  return <Screen background="primary50" />;
+};
+
+export default HomeScreen;
+```
+
+## hooks
+
+### useHeader
+
+Use this custom hook to declaratively configure the header for a screen.
+
+## Usage of useHeader
+
+```tsx
+useHeader(header: () => ReactElement, deps?: DependencyList)
+```
+
+
+
+
+## Props
+
+### children
+
+Type: `React.ReactNode`
+
+ Extends [`...BoxProps<Theme>`](/docs/components/Box) from the Box component
+
