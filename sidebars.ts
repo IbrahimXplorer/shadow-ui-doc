@@ -39,6 +39,16 @@ const sidebars: SidebarsConfig = {
         "components/Screen",
         {
           type: "category",
+          label: "Card",
+          items: [
+            "components/Card/Card",
+            "components/Card/Card.Cover",
+            "components/Card/Card.Title",
+            "components/Card/Card.Actions",
+          ],
+        },
+        {
+          type: "category",
           label: "Header",
           items: [
             "components/Header/Header",
