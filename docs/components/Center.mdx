@@ -1,0 +1,40 @@
+Center aligns items vertically & horizontally center.
+
+<img
+  src="https://github.com/user-attachments/assets/6df64cb5-0071-48b5-87b4-2c9f7cebe36c"
+  alt="Vector icon"
+  style={{
+    maxWidth: "30%",
+    height: "auto",
+    boxShadow:
+      "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+  }}
+/>
+
+    ## Usage
+    ```tsx
+
+import { Box, Center } from '@/components';
+import theme from '@/theme';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+
+const Example = () => {
+  return (
+    <Center width={theme.sizes.width} height={theme.sizes.width}>
+      <Box width={100} height={100} bg="primary300" borderRadius="rounded-sm" />
+    </Center>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends [`SpacingShorthandProps<Theme> &
+    LayoutProps<Theme>`](/docs/components/Box) from the theme
+
+### children
+
+**Type:** `React.ReactNode`

@@ -29,6 +29,10 @@ const sidebars: SidebarsConfig = {
       items: [
         "components/Text",
         "components/Box",
+        "components/VStack",
+        "components/HStack",
+        "components/Center",
+        "components/Divider",
         "components/Icon",
         "components/Badge",
         "components/ImageBanner",
