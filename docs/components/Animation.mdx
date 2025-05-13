@@ -1,0 +1,60 @@
+
+A reusable and theme-aware animated Lottie component using Restyle.
+
+<video controls autoplay width="30%" muted>
+  <source src=" https://github.com/user-attachments/assets/fca4dcd1-5a26-4dbc-b48d-87604df031ff" />
+</video>
+
+## Usage
+
+```tsx
+import {Animation, ContentSafeAreaView, Screen} from '@/components';
+import React from 'react';
+
+const Example = () => {
+  return (
+    <Screen background="primary50" safeAreaEdges={['top']}>
+      <ContentSafeAreaView>
+        <Animation animation="loader" height={100} width="50%" />
+      </ContentSafeAreaView>
+    </Screen>
+  );
+};
+
+export default Example;
+```
+### Props
+
+| Name         | Type                                                 | Default    | Description                                                                 |
+|--------------|------------------------------------------------------|------------|-----------------------------------------------------------------------------|
+| `animation`  | `animationType`                                      | `'loader'` | The animation key to render. Used with `getAnimation()` to load the source. |
+| `width`      | `number | string`                                     | `'30%'`    | Width of the animation. Can be a number or percentage string.               |
+| `height`     | `number | string`                                     | `40`       | Height of the animation. Can be a number or percentage string.              |
+| `autoPlay`   | `boolean`                                            | `true`     | Whether the animation should play automatically on load.                    |
+| `loop`       | `boolean`                                            | `true`     | Whether the animation should loop continuously.                             |
+| `...rest`    | `RestyleProps (spacing, layout, bg)`                 | -          | Additional Restyle props (e.g., margin, padding, backgroundColor).          |
+
+### Theming Support
+
+This component accepts the following Restyle shorthand props:
+
+- **Spacing**: `m`, `p`, `mt`, `mb`, etc.
+- **Background color**: `bg`, `backgroundColor`
+- **Layout**: `width`, `height`, etc.
+
+```tsx
+<Animation
+  animation="loader"
+  bg="background"
+  m={2}
+  width='30%'
+  height={40}
+/>
+```
+
+### Notes
+
+- The `animation` prop must match a key supported by `getAnimation()` function.
+- The animation files are expected to be Lottie JSONs (e.g., `loader.json`, `success.json`, etc.).
+- Animations are presents at `animations.ts` file. add your animation there.
+

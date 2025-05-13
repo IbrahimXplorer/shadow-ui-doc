@@ -35,6 +35,7 @@ const sidebars: SidebarsConfig = {
         "components/Divider",
         "components/Grid",
         "components/Icon",
+        "components/Animation",
         "components/Badge",
         "components/ImageBanner",
         "components/Checkbox",
