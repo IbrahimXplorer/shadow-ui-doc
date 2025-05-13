@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
         "components/HStack",
         "components/Center",
         "components/Divider",
+        "components/Grid",
         "components/Icon",
         "components/Badge",
         "components/ImageBanner",

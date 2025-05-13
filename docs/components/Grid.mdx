@@ -1,0 +1,138 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+The Grid component is a scrollable layout that arranges items in a 2D grid with customizable vertical (mainAxisSpacing) and horizontal (crossAxisSpacing) spacing.
+
+<Tabs>
+  <TabItem value="vector" label="Axis Count(1)" default>
+    <img
+      src="https://github.com/user-attachments/assets/c8da187c-cfe5-47f8-9011-2a790ff0590a"
+      alt="Vector icon"
+      style={{
+        maxWidth: "30%",
+        height: "auto",
+        boxShadow:
+          "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+      }}
+    />
+  </TabItem>
+  <TabItem value="svg" label="Axis Count(2)">
+    <img
+      src="https://github.com/user-attachments/assets/f359c4c6-48b9-4920-a350-c80b3937d83e"
+      alt="SVG icon"
+      style={{
+        maxWidth: "30%",
+        height: "auto",
+        boxShadow:
+          "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+      }}
+    />
+  </TabItem>
+  <TabItem value="image" label="Axis Count(3)">
+    <img
+      src="https://github.com/user-attachments/assets/70d8a695-8438-4d31-ad40-f6d518b3bfea"
+      alt="Image icon"
+      style={{
+        maxWidth: "30%",
+        height: "auto",
+        boxShadow:
+          "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+      }}
+    />
+  </TabItem>
+</Tabs>
+
+## Usage
+```tsx
+import {
+  Box,
+  ContentSafeAreaView,
+  Grid,
+  Screen,
+  Text,
+} from '@/components';
+import theme from '@/theme';
+import React from 'react';
+
+const Example = () => {
+
+  const dummyItems = [
+    'Apples',
+    'Bananas',
+    'Cherries',
+    'Dates',
+    'Eggplants',
+    'Figs',
+    'Grapes',
+    'Honeydew',
+    'Iceberg Lettuce',
+    'Jackfruit',
+    'Kiwi',
+    'Lemons',
+    'Mangoes',
+    'Nectarines',
+    'Oranges',
+    'Papayas',
+    'Quinces',
+    'Raspberries',
+    'Strawberries',
+    'Tomatoes',
+  ];
+
+  return (
+    <Screen background="primary50" safeAreaEdges={['top']}>
+      <ContentSafeAreaView >
+        <Grid crossAxisCount={1} mainAxisSpacing={5} crossAxisSpacing={5}>
+          {dummyItems.map((item, index) => (
+            <Box
+              key={index}
+              bg="primary300"
+              height={theme.sizes.safeWidth / 3}
+              borderRadius="rounded-sm"
+              alignItems="center"
+              justifyContent="center">
+              <Text>{item}</Text>
+            </Box>
+          ))}
+        </Grid>
+      </ContentSafeAreaView>
+    </Screen>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+### crossAxisCount (required)
+
+**Type:** `number`
+
+Number of items per row (columns)
+
+### mainAxisSpacing
+
+**Type:** `keyof typeof theme.spacing`
+
+Vertical spacing between rows
+
+
+  ### mainAxisSpacing
+
+**Type:** `keyof typeof theme.spacing`
+
+Horizontal spacing between items in a row
+
+## children
+
+**Type:** `ReactNode`
+
+🧩 Notes
+- If there are fewer items than needed to fill the last row, empty Box placeholders ensure layout alignment.
+
+- Grid uses ScrollView, so it's optimized for vertical scroll performance.
+
+- All spacing props accept values from your theme.spacing.
+
+
