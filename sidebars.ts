@@ -44,6 +44,8 @@ const sidebars: SidebarsConfig = {
         "components/Input",
         "components/IconButton",
         "components/Screen",
+        "components/ContentSafeAreaView",
+
         {
           type: "category",
           label: "Card",

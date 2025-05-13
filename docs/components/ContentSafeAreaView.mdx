@@ -1,0 +1,47 @@
+
+The `ContentSafeAreaView` component is a themed layout wrapper that provides consistent spacing and width across your app. It wraps content inside a `Box` with horizontal margins and a maximum width defined in the app's theme.
+
+### Usage
+
+```tsx
+import { ContentSafeAreaView, Screen, Text } from '@/components';
+import React from 'react';
+
+const Example = () => {
+  return (
+    <Screen background="primary50" safeAreaEdges={['top']}>
+      <ContentSafeAreaView>
+        <Text>Hello inside safe area!</Text>
+      </ContentSafeAreaView>
+    </Screen>
+  );
+};
+
+export default Example;
+```
+
+### Props
+
+This component accepts all props from `BoxProps<Theme>` and standard `children`.
+
+| Name        | Type              | Description                                       |
+|-------------|-------------------|---------------------------------------------------|
+| `children`  | `ReactNode`       | The content to be rendered inside the container. |
+| `...rest`   | `BoxProps<Theme>` | Any additional layout, spacing, or style props.  |
+
+### Theming Behavior
+
+- Uses `theme.sizes.safeWidth` for consistent content width.
+- Applies horizontal margin using `theme.sizes.sideSpace`.
+
+```tsx
+<ContentSafeAreaView backgroundColor="mainBackground" padding={2} >
+  <Text>This is themed safe content</Text>
+</ContentSafeAreaView>
+```
+
+### Notes
+
+- Best used as a layout container for screens or inner sections that should follow your app’s safe design margins.
+- Built on top of `Box`, inheriting all layout and style capabilities of Restyle.
+
