@@ -1,27 +1,25 @@
-import React from "react";
+// src/pages/index.tsx
+
+import React, { useCallback } from "react";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
+import Heading from "@theme/Heading";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import clsx from "clsx";
 
-import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
-//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
-
-// import HomepageFeatures from "@site/src/components/HomepageFeatures"; // Uncomment when needed
+import { loadSlim } from "tsparticles-slim";
+import type { Engine, Container } from "tsparticles-engine";
 
 import styles from "./index.module.css";
 
+// ====================
 // Hero Section
-export function HomepageContent() {
-  const { siteConfig } = useDocusaurusContext();
-
+// ====================
+function HeroSection() {
   return (
     <div className={clsx("container", styles.heroContentWrapper)}>
-      {/* LEFT COLUMN (Text) */}
+      {/* Text Content */}
       <div className={styles.heroText}>
         <Heading as="h1" className="hero__title primary">
           Build Consistently. Ship Beautifully.
@@ -32,10 +30,7 @@ export function HomepageContent() {
           UIs faster.
         </p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--primary button--lg"
-            to="/docs/getting-started"
-          >
+          <Link className="button button--primary button--lg" to="/docs/getting-started">
             Get Started
           </Link>
           <Link
@@ -47,7 +42,7 @@ export function HomepageContent() {
         </div>
       </div>
 
-      {/* RIGHT COLUMN (Images) */}
+      {/* Image Preview */}
       <div className={styles.heroImages}>
         <img
           src="https://github.com/user-attachments/assets/91179769-5293-4292-a1c0-9a708855fac9"
@@ -64,82 +59,74 @@ export function HomepageContent() {
   );
 }
 
-// Home Page Layout
-export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-
+// ====================
+// Particles Background
+// ====================
+function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      await console.log(container);
-    },
-    []
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        background: { color: { value: "transparent" } },
+        fpsLimit: 120,
+        interactivity: {
+          events: {
+            onClick: { enable: true, mode: "push" },
+            onHover: { enable: true, mode: "repulse" },
+            resize: true,
+          },
+          modes: {
+            push: { quantity: 4 },
+            repulse: { distance: 200, duration: 0.4 },
+          },
+        },
+        particles: {
+          color: { value: "#000" },
+          links: {
+            color: "#000",
+            distance: 200,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: { default: "bounce" },
+            speed: 1,
+          },
+          number: { density: { enable: true, area: 10000 }, value: 1000 },
+          opacity: { value: 1 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 5 } },
+        },
+        detectRetina: true,
+      }}
+    />
   );
+}
+
+// ====================
+// Page Component
+// ====================
+export default function Home(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
 
   return (
     <Layout
       title={`${siteConfig.title} - A React Native UI Kit`}
       description="Shadow UI is a modern, powerful UI component library built on top of Shopify Restyle for building consistent, theme-aware, and responsive designs in React Native."
     >
-      <main style={{ position: "relative" }}>
-        <div style={{ zIndex: 10, position: "relative", }}>
-          <HomepageContent />
+      <main className={styles.main}>
+        <div className={styles.contentWrapper}>
+          <HeroSection />
         </div>
-
-        {/* Particle Background at Bottom */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "300px", // or whatever height you need at the bottom
-            zIndex: 1,
-          }}
-        >
-          <Particles
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={{
-              background: { color: { value: "transparent" } },
-              fpsLimit: 120,
-              interactivity: {
-                events: {
-                  onClick: { enable: true, mode: "push" },
-                  onHover: { enable: true, mode: "repulse" },
-                  resize: true,
-                },
-                modes: {
-                  push: { quantity: 4 },
-                  repulse: { distance: 200, duration: 0.4 },
-                },
-              },
-              particles: {
-                color: { value: "#589FEB" },
-                links: {
-                  color: "#4287E8",
-                  distance: 200,
-                  enable: true,
-                  opacity: 0.5,
-                  width: 1,
-                },
-                move: {
-                  direction: "none",
-                  enable: true,
-                  outModes: { default: "bounce" },
-                  speed: 1,
-                },
-                number: { density: { enable: true, area: 2000 }, value: 200 },
-                opacity: { value:1 },
-                shape: { type: "circle" },
-                size: { value: { min: 1, max: 5 } },
-              },
-              detectRetina: true,
-            }}
-          />
-        </div>
+        <ParticlesBackground />
       </main>
     </Layout>
   );
