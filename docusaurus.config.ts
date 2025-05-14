@@ -74,6 +74,8 @@ const config: Config = {
         src: "img/logo.png",
       },
       items: [
+        {to: 'Guide', label: 'Blog', position: 'left'},
+        {to: 'blog', label: 'ShowCase', position: 'left'},
         {
           type: "html",
           position: "right",
