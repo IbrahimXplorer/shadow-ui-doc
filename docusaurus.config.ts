@@ -13,7 +13,7 @@ const config: Config = {
   url: "https://IbrahimXplorer.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/rnboilerplate-doc/",
+  baseUrl: "/shadow-ui-doc/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
