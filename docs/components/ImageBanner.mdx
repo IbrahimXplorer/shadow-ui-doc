@@ -1,0 +1,62 @@
+ImageBanner component used to display full width banner images, supports both local and remote images. It maintains the aspect ratio of the image based on a desired width and uses Shopify's @shopify/restyle system for styling consistency.
+
+{" "}
+<img
+  src="https://github.com/user-attachments/assets/2c284adb-5c29-497e-b514-03fe12bcba99"
+  alt="Vector icon"
+  style={{
+    maxWidth: "30%",
+    height: "auto",
+    boxShadow:
+      "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+  }}
+/>
+
+## Usage
+
+```tsx
+import { ImageBanner } from "@/components";
+import React, { ReactElement } from "react";
+
+const Example = (): ReactElement => {
+  return (
+    <ImageBanner
+      variant="remote"
+      borderRadius="rounded-sm"
+      source={
+        "https://images.pexels.com/photos/461929/pexels-photo-461929.jpeg?auto=compress&cs=tinysrgb&w=400"
+      }
+    />
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends the [`ImageBannerProps`](/docs/Theming) from the ImageBanner Component
+
+### source
+
+ **Type:**  `'string' | 'getImage('banner')'`
+
+When passing an image name (as a string) to the getImage function, it must match a key in the images object.
+
+### variant 
+
+ **Type:**  `'local' | 'remote'`
+
+### width 
+
+ **Type:**  `'number'`
+
+### borderRadius 
+ **Type:** `'none' | 'rounded-xs' | 'rounded-sm' | 'rounded' | 'rounded-md'  'rounded-lg'|
+  'rounded-xl' | 
+  'rounded-xxl' | 
+  'rounded-hu' |
+  'rounded-full' `
+
+Rounds the corners of the card.
+

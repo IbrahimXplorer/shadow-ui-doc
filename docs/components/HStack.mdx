@@ -1,0 +1,47 @@
+HStack aligns items horizontally.
+
+<img
+  src="https://github.com/user-attachments/assets/a88c5de5-e77e-4cdc-9207-b3c5261f89f5"
+  alt="Vector icon"
+  style={{
+    maxWidth: "30%",
+    height: "auto",
+    boxShadow:
+      "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+  }}
+/>
+
+    ## Usage
+    ```tsx
+import {Box, HStack} from '@/components';
+import React from 'react';
+import {StyleSheet} from 'react-native';
+
+const Example = () => {
+  return (
+    <HStack justifyContent="space-between">
+      <Box borderRadius="rounded-sm" width={50} height={50} bg="primary300" />
+      <Box borderRadius="rounded-sm" width={50} height={50} bg="primary300" />
+      <Box borderRadius="rounded-sm" width={50} height={50} bg="primary400" />
+    </HStack>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends [`SpacingShorthandProps<Theme> &
+    LayoutProps<Theme> &
+    PositionProps<Theme>`](/docs/components/Box) from the theme
+
+### children
+
+**Type:** `React.ReactNode`
+
+### reverse
+
+**Type:** `boolean`
+
+**_If reverse true, direction should be 'row-reverse' else row_**

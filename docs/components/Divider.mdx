@@ -1,0 +1,64 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+A divider is a thin, lightweight separator that groups content in lists and page layouts
+
+<Tabs>
+  <TabItem value="vector" label="Line Divider" default>
+    <img
+      src="https://github.com/user-attachments/assets/952d7fb6-75cb-4b2c-9fb2-bc3624f5350b"
+      alt="Vector icon"
+       style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+  <TabItem value="svg" label="Dotted Divider">
+    <img
+      src="https://github.com/user-attachments/assets/32d621bd-186a-4d8f-bcb9-8cda080f21c4"
+      alt="SVG icon"
+       style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+  <TabItem value="image" label="Dashed Divider">
+    <img
+      src="https://github.com/user-attachments/assets/853a860b-5450-4591-a26d-7184e93abe6f"
+      alt="Image icon"
+       style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+</Tabs>
+
+```tsx
+import { Divider, Text, VStack } from '@/components';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+
+const Example = () => {
+  return (
+    <VStack g={3}>
+      <Text>Orange</Text>
+      <Divider />
+      <Text>Pineapple</Text>
+      <Divider />
+      <Text>Cherry</Text>
+      <Divider />
+      <Text>Banana</Text>
+    </VStack>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends [`SpacingShorthandProps<Theme> &
+    BorderProps<Theme> &
+    LayoutProps<Theme> &
+    ViewProps`]
+
+### variant
+
+**Type:** `'line' | 'dotted' | 'dashed'`

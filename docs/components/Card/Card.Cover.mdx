@@ -1,0 +1,29 @@
+A component to show a cover image inside a Card.
+
+    <img
+      src="https://github.com/user-attachments/assets/cf12ea44-d649-4f3e-add9-7a4df2cbd483"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+
+```tsx
+import { Card } from "@/components";
+import React from "react";
+
+const Example = () => {
+  return (
+    <Card>
+      <Card.CardCover />
+    </Card>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends the [`ImageBannerProps`](/docs/components/ImageBanner) from the ImageBanner Component

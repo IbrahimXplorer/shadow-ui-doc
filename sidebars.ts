@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     "Getting-Started",
     "Theming",
+    "Restyle-functions",
     "Colors",
     {
       type: "category",
@@ -28,7 +29,43 @@ const sidebars: SidebarsConfig = {
       items: [
         "components/Text",
         "components/Box",
+        "components/VStack",
+        "components/HStack",
+        "components/Center",
+        "components/Divider",
+        "components/Grid",
         "components/Icon",
+        "components/Animation",
+        "components/Badge",
+        "components/ImageBanner",
+        "components/Checkbox",
+        "components/Switch",
+        "components/Clickable",
+        "components/Input",
+        "components/IconButton",
+        "components/Screen",
+        "components/ContentSafeAreaView",
+
+        {
+          type: "category",
+          label: "Card",
+          items: [
+            "components/Card/Card",
+            "components/Card/Card.Cover",
+            "components/Card/Card.Title",
+            "components/Card/Card.Actions",
+          ],
+        },
+        {
+          type: "category",
+          label: "Header",
+          items: [
+            "components/Header/Header",
+            "components/Header/Header.BackAction",
+            "components/Header/Header.Content",
+            "components/Header/Header.Action"
+          ],
+        },
         {
           type: "category",
           label: "Button",

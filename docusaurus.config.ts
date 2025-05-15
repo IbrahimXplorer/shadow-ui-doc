@@ -1,6 +1,6 @@
 import type * as Preset from "@docusaurus/preset-classic";
-import type {Config} from "@docusaurus/types";
-import {themes as prismThemes} from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import { themes as prismThemes } from "prism-react-renderer";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -68,31 +68,76 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
+      title: "Shadow UI",
       logo: {
         alt: "My Site Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       items: [
+        {to: '/docs/ShowCase', label: 'ShowCase', position: 'left'},
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
-        {to: "/blog", label: "Blog", position: "left"},
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
+          type: "html",
           position: "right",
+          value: `
+            <a href="https://github.com/IbrahimXplorer/shadow-ui" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="display:flex;align-items:center;margin-right:10px;">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                   alt="GitHub" 
+                   width="20" 
+                   height="20" 
+                   style="display:block;" />
+            </a>
+          `,
         },
-      ],
+        {
+          type: "html",
+          position: "right",
+          value: `
+            <a href="https://www.linkedin.com/in/devibrahim/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="display:flex;align-items:center;margin-right:10px;">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+                   alt="LinkedIn" 
+                   width="20" 
+                   height="20" 
+                   style="display:block;" />
+            </a>
+          `,
+        },
+        {
+          type: "html",
+          position: "right",
+          value: `
+          <a class="button button--primary button--md" 
+             href="/docs/getting-started" 
+             style="text-decoration:none;">
+            Hire Me
+          </a>
+        `,
+        },
+      ]
+      
     },
-
+    footer: {
+      // style: 'dark',
+      copyright: `© ${new Date().getFullYear()} Shadow UI. Built by Ibrahim Khan.`,
+      style: "dark",
+    },
+    
+    
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    colorMode: {
+      defaultMode: "light", // 👈 Set default theme to dark
+      // disableSwitch: true, // 👈 Optional: allow user to switch themes
+      respectPrefersColorScheme: false, // 👈 Optional: ignore user's OS preference
+    },
+    
   } satisfies Preset.ThemeConfig,
 };
 

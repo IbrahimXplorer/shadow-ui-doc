@@ -1,0 +1,32 @@
+
+A component to show a title inside a Card.
+    <img
+      src="https://github.com/user-attachments/assets/d54e0dc0-0855-40b4-826f-c83e58340940"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+
+```tsx
+import { Card } from "@/components";
+import React from "react";
+
+const Example = () => {
+  return (
+    <Card>
+        <Card.Title title="This is card title" />
+    </Card>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends the [`TextProps<Theme>`](/docs/components/Text) from text compnent
+
+### title
+**Type:** `string`

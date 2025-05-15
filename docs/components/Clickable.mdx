@@ -1,0 +1,41 @@
+A container that lets views respond when touched.
+
+<video controls autoplay width="30%" muted>
+  <source src="https://github.com/user-attachments/assets/043742f1-0eae-4d7b-96e7-7c351ad2610c" />
+</video>
+
+## Usage
+
+```tsx
+import React from "react";
+import { Clickable, Text } from "./components";
+
+const Example = () => {
+  return (
+    <Clickable>
+      <Text color="black">Press Me</Text>
+    </Clickable>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends the [`TouchableOpacityProps`](https://reactnative.dev/docs/touchableopacity#props) from React Native.
+
+Clickable component comes with the following restyle functions:
+
+import Link from "@docusaurus/Link";
+
+> ⚠️ **Note:** Remember, props must match their corresponding [`theme keys`](/docs/themeing)
+
+| Restyle Function | Props                                                                                                                                                                                                                                                                                                                                                                        | Theme Key   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| backgroundColor  | backgroundColor [bg]                                                                                                                                                                                                                                                                                                                                                         | colors      |
+| spacing          | margin [m], marginTop [mt], marginRight [mr], marginBottom [mb], marginLeft [ml], marginStart [ms], marginEnd[me], marginHorizontal [mx], marginVertical [my], padding [p], paddingTop [pt], paddingRight [pr], paddingBottom [pb], paddingLeft [pl], paddingStart [ps], paddingEnd [pe], paddingHorizontal [px], paddingVertical [py], gap [g], rowGap [rG], columnGap [cG] | spacing     |
+| layout           | width, height, minWidth, maxWidth, minHeight, maxHeight, overflow, aspectRatio, alignContent, alignItems, alignSelf, justifyContent, flex, flexBasis, flexDirection, flexGrow, flexShrink, flexWrap                                                                                                                                                                          | _none_      |
+| border           | borderBottomWidth, borderLeftWidth, borderRightWidth, borderStartWidth, borderEndWidth, borderStyle, borderTopWidth, borderWidth                                                                                                                                                                                                                                             | _none_      |
+| border           | borderColor, borderTopColor, borderRightColor, borderLeftColor, borderStartColor, borderEndColor, borderBottomColor                                                                                                                                                                                                                                                          | colors      |
+| border           | borderRadius, borderBottomLeftRadius, borderBottomRightRadius, borderBottomStartRadius, borderBottomEndRadius, borderTopLeftRadius, borderTopRightRadius, borderTopStartRadius, borderTopEndRadius                                                                                                                                                                           | borderRadii |

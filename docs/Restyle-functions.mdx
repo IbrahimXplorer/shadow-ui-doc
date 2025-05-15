@@ -1,40 +1,15 @@
-# Box
+# Restyle Functions
 
-Leverage the Box component from Shadow UI—a versatile and powerful layout building block. Effortlessly customize its styles, props, and structure to create responsive designs.
+Restyle functions are the bread and butter of our library. They specify how props should be mapped to values in a resulting style object, that can then be passed down to a React Native component. The props support responsive values and can be mapped to values in your theme.
 
- <img
-      src="https://github.com/user-attachments/assets/8e16dbe7-bf72-455d-be85-5f402fbad999"
-      alt="Apple Image"
-       style={{ maxWidth: "30%", height: "auto",boxShadow:
-      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
-    />
+## Predefined Restyle functions
 
-## Usage
-
-```tsx
-import React from 'react';
-import { Box } from './components';
-
-const Main = () => {
-  return (
-     <Box flex={1} bg="primary"  />
-  );
-};
-
-export default Main;
-```
-The Box component comes with the following restyle functions:
-
-import Link from '@docusaurus/Link';
-
-> ⚠️ **Note:** Remember, props must match their corresponding [`theme keys`](/docs/themeing)
-
-
-
+The Restyle library comes with a number of predefined Restyle functions for your convenience. Properties within brackets are aliases / shorthands for the preceding prop name.
 
 | Restyle Function | Props                                                                                                                                                                                                                                                                                                                                                                        | Theme Key   |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| backgroundColor  | backgroundColor [bg]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | colors      |
+| backgroundColor  | backgroundColor [bg]                                                                                                                                                                                                                                                                                                                                                         | colors      |
+| color            | color                                                                                                                                                                                                                                                                                                                                                                        | colors      |
 | opacity          | opacity                                                                                                                                                                                                                                                                                                                                                                      | _none_      |
 | visible          | display (maps `true` / `false` to `flex` / `none`)                                                                                                                                                                                                                                                                                                                           | _none_      |
 | spacing          | margin [m], marginTop [mt], marginRight [mr], marginBottom [mb], marginLeft [ml], marginStart [ms], marginEnd[me], marginHorizontal [mx], marginVertical [my], padding [p], paddingTop [pt], paddingRight [pr], paddingBottom [pb], paddingLeft [pl], paddingStart [ps], paddingEnd [pe], paddingHorizontal [px], paddingVertical [py], gap [g], rowGap [rG], columnGap [cG] | spacing     |
@@ -46,3 +21,6 @@ import Link from '@docusaurus/Link';
 | border           | borderRadius, borderBottomLeftRadius, borderBottomRightRadius, borderBottomStartRadius, borderBottomEndRadius, borderTopLeftRadius, borderTopRightRadius, borderTopStartRadius, borderTopEndRadius                                                                                                                                                                           | borderRadii |
 | shadow           | shadowOpacity, shadowOffset, shadowRadius, elevation                                                                                                                                                                                                                                                                                                                         | _none_      |
 | shadow           | shadowColor                                                                                                                                                                                                                                                                                                                                                                  | colors      |
+| textShadow       | textShadowOffset, textShadowRadius                                                                                                                                                                                                                                                                                                                                           | _none_      |
+| textShadow       | textShadowColor                                                                                                                                                                                                                                                                                                                                                              | colors      |
+| typography       | fontFamily, fontSize, fontStyle, fontWeight, includeFontPadding, fontVariant, letterSpacing, lineHeight, textAlign, textAlignVertical, textDecorationColor, textDecorationLine, textDecorationStyle, textTransform, verticalAlign, writingDirection                                                                                                                          | _none_      |

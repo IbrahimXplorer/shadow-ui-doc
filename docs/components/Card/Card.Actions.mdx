@@ -1,0 +1,41 @@
+A component to show a list of actions inside a Card.
+
+
+
+
+  <img
+      src="https://github.com/user-attachments/assets/368178da-b21c-4fa5-8f0f-a0ab2c40af8f"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+```tsx
+import { Button, Card } from '@/components';
+import React, { ReactElement } from 'react';
+
+const Example = (): ReactElement => {
+  return (
+    <Card>
+      <Card.Actions flexDirection="row" g={10}>
+        <Button size="sm" flex={1} type="outlined">
+          <Button.Text title="Submit"/>
+        </Button>
+        <Button size="sm" flex={1}>
+          <Button.Text title="Apply"/>
+        </Button>
+      </Card.Actions>
+    </Card>
+  );
+};
+
+export default Example;
+```
+
+## Props
+Extends the [`BoxProps<Theme>`](/docs/components/Box) from the Box Component
+
+ ### children
+Type : `React.ReactNode`	
+

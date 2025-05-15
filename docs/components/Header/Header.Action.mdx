@@ -1,0 +1,42 @@
+A component designed to render an actionable item within the header.
+
+    <img
+      src="https://github.com/user-attachments/assets/823189bd-246e-4746-ba37-9544ce57bb92"
+      alt="Image icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+
+```tsx
+import { Header, Screen, Text } from "@/components";
+import useHeader from "@/hooks/useHeader";
+import React from "react";
+
+const HomeScreen = () => {
+  useHeader(() => (
+    <Header>
+      <Header.Action variant="vector" icon="bell" />
+    </Header>
+  ));
+
+  return <Screen background="primary50" />;
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+Extends [`...IconButtonProps<Theme>`](/docs/components/IconButton) from the IconButton component
+
+### icon
+
+Type: `string`
+
+### onPress
+
+Type: `(e: GestureResponderEvent) => void`
+
+Function to execute on press.

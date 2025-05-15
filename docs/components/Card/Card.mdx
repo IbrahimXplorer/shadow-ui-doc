@@ -1,0 +1,87 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+A card is a box that shows a quick overview and lets users access more detailed information when needed.
+
+<Tabs>
+  <TabItem value="vector" label="Contained Card" default>
+    <img
+      src="https://github.com/user-attachments/assets/f13bb0e3-65d8-4325-a8e7-f18996c13791"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+  <TabItem value="svg" label="Outlined Card">
+    <img
+      src="https://github.com/user-attachments/assets/9f9cf5fe-21d3-416b-a7a7-feb181ba9571"
+      alt="SVG icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+  <TabItem value="image" label="Transparent Card">
+    <img
+      src="https://github.com/user-attachments/assets/8df8f0bb-6ea2-4ebe-808c-893d6d6f6cfd"
+      alt="Image icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```tsx
+import { Button, Card, Text } from "@/components";
+import React from "react";
+
+const Example = () => {
+  return (
+    <Card>
+      <Card.CardCover />
+      <Card.Title title="Super Sale" />
+      <Card.Content>
+        <Text>
+          Get ready for the biggest shopping event of the season with our Super
+          Sale!.
+        </Text>
+      </Card.Content>
+      <Card.Actions>
+        <Button size="sm">
+          <Button.Text title="See More" />
+        </Button>
+      </Card.Actions>
+    </Card>
+  );
+};
+
+export default Example;
+```
+
+## Props
+
+Extends the [`SpacingProps<Theme> & LayoutProps<Theme> & BackgroundColorProps<Theme>`](/docs/Theming) from theme
+
+### `variant`
+
+**Type:** `'contained' | 'outlined' | 'transparent'`
+
+## borderRadius
+
+**Type:** `'none' | 'rounded-xs' | 'rounded-sm' | 'rounded' | 'rounded-md'  'rounded-lg'|
+  'rounded-xl' | 
+  'rounded-xxl' | 
+  'rounded-hu' |
+  'rounded-full' `
+
+Rounds the corners of the card.
+
+### onLayout
+
+ **Type:**  `(event: LayoutChangeEvent) => void`
+
+ Captures the layout of the card(e.g: width,height).
+
+ ### children
+Type : `React.ReactNode`	

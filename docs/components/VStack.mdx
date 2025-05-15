@@ -1,0 +1,49 @@
+VStack aligns items vertically.
+
+{" "}
+
+<img
+  src="https://github.com/user-attachments/assets/23826299-8350-43d4-82a1-4bf1c8dbc7cf"
+  alt="Vector icon"
+  style={{
+    maxWidth: "30%",
+    height: "auto",
+    boxShadow:
+      "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+  }}
+/>
+
+    ## Usage
+    ```tsx
+
+import { Box, ContentSafeAreaView, HStack, VStack } from "@/components";
+import theme from "@/theme";
+import React, { ReactElement } from "react";
+
+const Example = (): ReactElement => {
+return (
+
+<VStack g={5}>
+  <Box width={300} height={50} bg="primary200" />
+  <Box width={300} height={50} bg="primary300" />
+  <Box width={300} height={50} bg="primary400" />
+</VStack>
+); };
+
+export default Example;
+```
+
+## Props
+
+Extends [`SpacingShorthandProps<Theme> &
+    LayoutProps<Theme>`](/docs/components/Box) from the theme
+
+### children
+
+**Type:** `React.ReactNode`
+
+### reverse
+
+**Type:** `boolean`
+
+**_If reverse true, direction should be 'column-reverse' else column_**

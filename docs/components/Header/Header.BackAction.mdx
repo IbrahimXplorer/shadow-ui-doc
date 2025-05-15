@@ -1,0 +1,44 @@
+A component used to display a back button in the Header.
+
+    <img
+      src="https://github.com/user-attachments/assets/62e7c287-0bb7-42ae-a382-31178305faf6"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+
+```tsx
+import { Header, Screen, Text } from "@/components";
+import useHeader from "@/hooks/useHeader";
+import React from "react";
+
+const HomeScreen = () => {
+  useHeader(() => (
+    <Header>
+      <Header.BackAction />
+    </Header>
+  ));
+
+  return <Screen background="primary50" />;
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+Extends [`...Omit<IconProps, 'icon'>`](/docs/components/Icon) from the Icon component
+
+### onPress
+
+Type: `(e: GestureResponderEvent) => void`
+
+Function to execute on press.
+
+### color
+
+**Type:** `ColorProps<Theme>`
+
+Defines color of the icon

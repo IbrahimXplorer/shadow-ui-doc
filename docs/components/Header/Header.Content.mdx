@@ -1,0 +1,50 @@
+A component to use as a header at the top of the screen. It can contain the screen title & subtitle
+
+    <img
+      src="https://github.com/user-attachments/assets/7ac1a1f1-7a33-448b-a610-e355ee113543"
+      alt="Vector icon"
+      style={{ maxWidth: "30%", height: "auto",boxShadow:
+      '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)' }}
+    />
+
+## Usage
+
+```tsx
+import { Header, Screen, Text } from "@/components";
+import useHeader from "@/hooks/useHeader";
+import React from "react";
+
+const HomeScreen = () => {
+  useHeader(() => (
+    <Header>
+      <Header.Content title="hellow" subTitle="John Doe" />
+    </Header>
+  ));
+
+  return <Screen background="primary50" />;
+};
+
+export default HomeScreen;
+```
+
+## Props
+
+Extends [`...LayoutProps<Theme>`](/docs/components/Icon) from the Icon component
+
+### title
+
+Type: `string`
+
+    Main header title.
+
+### subTitle
+
+**Type:** `string`
+
+Optional subtitle text.
+
+### color
+
+**Type:** `string`
+
+Define the color of the title and subTitle
